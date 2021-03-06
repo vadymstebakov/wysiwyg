@@ -1,4 +1,4 @@
-export const firstCartToLowerCase = (str) => {
+export const firstCharToLowerCase = (str) => {
     if (typeof str !== 'string') {
         return '';
     }
@@ -15,10 +15,11 @@ export const removeFromLastCapitalize = (str) => {
 };
 
 export const debounce = (cb, interval = 400) => {
-    let debounceTimeoutId;
+    let timeoutId;
+
     return function (...args) {
-        clearTimeout(debounceTimeoutId);
-        debounceTimeoutId = null;
-        debounceTimeoutId = setTimeout(() => cb.apply(this, args), interval);
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        timeoutId = setTimeout(() => cb.apply(this, args), interval);
     };
 };

@@ -1,6 +1,7 @@
 import { AreaBlock, ToolkitBlock } from './blocks';
 import { Area } from './components/area';
-import { firstCartToLowerCase, removeFromLastCapitalize } from './helpers/utils';
+import { Toolkit } from './components/toolkit';
+import { firstCharToLowerCase, removeFromLastCapitalize } from './helpers/utils';
 
 export class App {
     constructor(selector, options) {
@@ -14,6 +15,8 @@ export class App {
 
         const area = new Area('#area');
         area.init();
+
+        new Toolkit('#toolkit').init();
     }
 
     render() {
@@ -21,7 +24,7 @@ export class App {
 
         this.blocks.forEach((Block, i, list) => {
             const options = Block.name === 'ToolkitBlock' ? { icons: this.options.icons } : {};
-            const id = firstCartToLowerCase(removeFromLastCapitalize(Block.name));
+            const id = firstCharToLowerCase(removeFromLastCapitalize(Block.name));
 
             blocks.push(new Block(id, options).toHTML());
 

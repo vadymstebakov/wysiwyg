@@ -67,7 +67,8 @@
     opacity: 60%;
 }
 
-.editor .toolkit > button:hover {
+.editor .toolkit > button:hover,
+.editor .toolkit > button.active {
     opacity: 100%;
 }
 
