@@ -1,0 +1,16 @@
+{
+  "name": "wysiwig",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "git@github.com:vadymstebakov/wysiwyg.git",
+  "author": "Vadym <vadim.stebakov.94@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "parcel ./src/index.html --open",
+    "build": "parcel build ./src/index.html"
+  },
+  "devDependencies": {
+    "parcel-bundler": "1.12.3"
+  }
+}

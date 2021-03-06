@@ -1,0 +1,59 @@
+body {
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    margin: 0;
+    background: #edc8f4;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    position: relative;
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    grid-template-areas: "content";
+}
+
+.papercard {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 35px 35px 25px 35px;
+    max-width: 600px;
+    min-width: 300px;
+    max-height: 100vh;
+    align-self: center;
+    justify-self: center;
+    height: 300px;
+    min-height: 100px;
+    background-color: #ffffff;
+    margin: 0;
+    border-radius: 3%;
+    box-shadow: 10px 10px 40px 10px #0000002f;
+    grid-area: content;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
