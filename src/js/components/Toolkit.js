@@ -1,15 +1,12 @@
 export class Toolkit {
-    constructor(selector, options = {}) {
-        this.$el = document.querySelector(selector);
+    constructor(selectorToolkit, selectorArea, options = {}) {
+        this.$toolkit = document.querySelector(selectorToolkit);
+        this.$area = document.querySelector(selectorArea);
         this.options = options;
     }
 
     init() {
-        this._initClick();
-    }
-
-    _initClick() {
-        this.$el.addEventListener('click', this._handleTypes);
+        this.$toolkit.addEventListener('click', this._handleTypes.bind(this));
     }
 
     _handleTypes(e) {
@@ -19,15 +16,15 @@ export class Toolkit {
             return;
         }
 
+        $target.classList.toggle('active');
+
         switch ($target.dataset.type) {
             case 'bold':
             case 'italic':
-                // $target.classList.toggle('active');
-                document.execCommand($target.dataset.type);
+                document.execCommand($target.dataset.type, false);
                 break;
             case 'h1':
             case 'h2':
-                // $target.classList.toggle('active');
                 document.execCommand('formatBlock', false, `<${$target.dataset.type}>`);
                 break;
             default:

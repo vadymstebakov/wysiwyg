@@ -23,3 +23,16 @@ export const debounce = (cb, interval = 400) => {
         timeoutId = setTimeout(() => cb.apply(this, args), interval);
     };
 };
+
+export const restoreSelection = (savedSel) => {
+    if (!savedSel) return;
+    const sel = document.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(savedSel);
+};
+
+export const saveSelection = () => {
+    const sel = document.getSelection();
+    if (sel.rangeCount > 0) return sel.getRangeAt(0);
+    return null;
+};

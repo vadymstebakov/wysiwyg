@@ -1,6 +1,6 @@
-import { AreaBlock, ToolkitBlock } from './blocks';
-import { Area } from './components/area';
-import { Toolkit } from './components/toolkit';
+import { AreaBlock, ToolkitBlock } from './Blocks';
+import { Area } from './components/Area';
+import { Toolkit } from './components/Toolkit';
 import { firstCharToLowerCase, removeFromLastCapitalize } from './helpers/utils';
 
 export class App {
@@ -16,7 +16,8 @@ export class App {
         const area = new Area('#area');
         area.init();
 
-        new Toolkit('#toolkit').init();
+        const toolkit = new Toolkit('#toolkit', '#area');
+        toolkit.init();
     }
 
     render() {
